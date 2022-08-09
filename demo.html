@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+  <script type="text/javascript"
+    src="https://cdnjs.cloudflare.com/ajax/libs/gumby/2.6.0/js/libs/jquery-1.10.1.min.js"></script>
+  <script src="search.js"></script>
+
+  <title>PDBe Molstar - Basic</title>
+  
+  <!-- Molstar CSS & JS -->
+  <link rel="stylesheet" type="text/css"
+    href="https://www.ebi.ac.uk/pdbe/pdb-component-library/css/pdbe-molstar-3.0.0.css">
+  <script type="text/javascript"
+    src="https://www.ebi.ac.uk/pdbe/pdb-component-library/js/pdbe-molstar-plugin-3.0.0.js"></script>
+  <style>
+    #myViewer {
+      float: left;
+      width: 400px;
+      height: 400px;
+      position: relative;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h4>PDB STRUCTURE</h4>
+  <!-- <nav class="navbar navbar-light bg-light justify-content-between">
+  <a class="navbar-brand">PDB STRUCTURE</a>
+  <form class="form-inline">
+    <input  id="box" class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <button id="icon"  class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+  </form>
+</nav> -->
+<!-- Molstar container -->
+  <div id="myViewer"></div>
+  <script>
+      function getitem(){
+        var b = localStorage.getItem("myValue");
+        var link='https://files.rcsb.org/download/'+b+'.pdb';
+        //alert("The Value Received is " + link);
+        var resetValue =0;
+        localStorage.setItem("myValue", resetValue);
+        return link;
+        }
+     
+      //Create plugin instance
+      var viewerInstance = new PDBeMolstarPlugin();
+      //var str = document.getElementById("outputsearch").value;
+      //console.log(str);
+      //var link= getlink();
+      //console.log(link);
+  
+      //Set options (Checkout available options list in the documentation)
+     // var uurl='https://files.rcsb.org/download/'+str+'.pdb';
+       //console.log(uurl);
+       var uurl=getitem();
+       console.log(uurl);
+     
+      var options = {
+        customData:{ url: uurl, format: 'pdb', binary:false },
+        hideControls:false,
+        expanded:true,
+        hideExpandIcon:false,
+        AnimationEffect:true,
+        domainAnnotation:true,
+        
+        
+
+      }
+      
+      //Get element from HTML/Template to place the viewer 
+      var viewerContainer = document.getElementById('myViewer');
+  
+      //Call render method to display the 3D view
+      viewerInstance.render(viewerContainer, options);
+
+  </script>
+</body>
+
+</html>
