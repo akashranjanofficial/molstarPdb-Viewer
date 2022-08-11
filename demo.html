@@ -47,7 +47,8 @@
   <script>
       function getitem(){
         var b = localStorage.getItem("myValue");
-        var link='https://files.rcsb.org/download/'+b+'.pdb';
+        //var link='https://files.rcsb.org/download/'+b+'.pdb';
+        var link='https://raw.githubusercontent.com/akashranjanofficial/molstarPdb-Viewer/pdbdata/protein-ligand/'+b+'.pdb';
         //alert("The Value Received is " + link);
         var resetValue =0;
         localStorage.setItem("myValue", resetValue);
