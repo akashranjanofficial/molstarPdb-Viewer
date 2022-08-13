@@ -69,6 +69,7 @@ crossorigin="anonymous"></script>
         <th>electrostatic</th>
         <th>electrostatic_sd</th>
         <th>polar_solvation</th>
+        <th>polar_solvation_sd</th>
         <th>non_polar_solvation</th>
         <th>non_polar_solvation_sd</th>
         <th>vdW</th>
@@ -76,6 +77,8 @@ crossorigin="anonymous"></script>
     </thead>
     <tbody>
       <script>
+      
+
        fetch("https://raw.githubusercontent.com/akashranjanofficial/molstarPdb-Viewer/pdbdata/data.json").then((data)=>{
   return data.json();
 }).then((objectData)=>{
@@ -92,6 +95,7 @@ for (var i = 0; i < objectData.length; i++) {
   tr.append("<td>" + objectData[i].electrostatic + "</td>");
   tr.append("<td>" + objectData[i].electrostatic_sd + "</td>");
   tr.append("<td>" + objectData[i].polar_solvation + "</td>");
+  tr.append("<td>" + objectData[i].polar_solvation_sd + "</td>");
   tr.append("<td>" + objectData[i].non_polar_solvation + "</td>");
   tr.append("<td>" + objectData[i].non_polar_solvation_sd + "</td>");
   tr.append("<td>" + objectData[i].vdW + "</td>");
