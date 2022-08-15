@@ -15,13 +15,13 @@ function toggleShow () {
 
 // }
 function redirect(){
-    window.location.href='demo.html';
+    window.location.href='view.html';
 }
 
 function valueSender()
 {
 var str=document.getElementById("box").value;
 localStorage.setItem("myValue", str);
-window.location.href="demo.html";
-}
 
+window.location.href="view.html";
+}
