@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <title>IIIT Hyderabad</title>
-  <link rel="stylesheet" href="./style.css">
+  <link rel="stylesheet" href="style.css">
 
 </head>
 <body>
@@ -17,6 +17,8 @@
     <link rel="stylesheet" href="nav.css"/>
     <link rel="stylesheet" href="style.css"/>
     <script src="search.js"></script>
+    <script  src="./datapdb.js"></script>
+    <script  src="datapdb.js"></script>
     
     <title>IIIT Hyderabad Protein Data Bank</title>
 </head>
@@ -33,25 +35,19 @@
         <ul class="nav-links">
             <li><a href="https://www.iiit.ac.in/">Home</a></li>
             <li><a href="#">Ongoing Research</a></li>
-            <li><a href="#">What are we building</a></li>
+            <li><a href="about\about.html">About Dataset</a></li>
             <li><a href="#">Young Researchers</li>
+              <li><a href="https://healthcare.iiit.ac.in/d4/data.csv">Download PDB-IDs info csv</li>
             <li><a href="#">Contact Us</a></li>
-            <li><input type="text" id="box" placeholder="ENTER PDB-ID" class="text"><button class="login-button" id="icon" onclick="valueSender();">Search pdbid</button></li>
-            <li><button class="join-button" href="#">Join</button></li>
+            <li><input type="text" id="box" placeholder="ENTER PDB-ID" class="text"><button class="login-button" id="icon" onclick="valueSender();returndata();">Search pdbid</button></li>
+            <li><button class="join-button" href="https://github.com/akashranjanofficial/molstarPdb-Viewer/tree/pdbdata">Join</button></li>
         </ul>
     </nav>
-    <script src="nav.js"></script>
+    <!-- <script src="nav.js"></script> -->
 
 <div id="particles-js"></div>
 <script>
-  /* -----------------------------------------------
-/* Author : Vincent Garreau  - vincentgarreau.com
-/* MIT license: https://opensource.org/licenses/MIT
-/* Demo / Generator : vincentgarreau.com/particles.js
-/* GitHub : github.com/VincentGarreau/particles.js
-/* How to use? : Check the GitHub README
-/* v2.0.0
-/* ----------------------------------------------- */
+  
 
 var pJS = function(tag_id, params){
 
@@ -1589,11 +1585,15 @@ window.particlesJS.load = function(tag_id, path_config_json, callback){
   
 <!-- text -->
    
-      <h1>Welcome to IIIT Hyderabad Protein Database</h1>
+      <h1><p>Welcome to IIIT </p>Hyderabad<p>Protein-ligand Database</p></h1>
   </body>
 </html>
 <!-- partial -->
-  <script  src="./script.js"></script>
+  <!-- <script  src="./script.js"></script> -->
 
+ <!-- <script  src="./datapdb.js"></script> -->
+ <!-- <script  src="./nav.js"></script> -->
+ <script type="text/javascript" src="nav.js"></script>
+ <script type="text/javascript" src="script.js"></script>
 </body>
 </html>
